@@ -3,6 +3,8 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(express.json()); 
+
 app.get('/' , (req , res) =>{
     res.send("Hello Vansh");
 })
@@ -12,12 +14,15 @@ app.get('/api/v1' , (req , res)=>{
 })
 
 app.post('/home' , (req , res)=>{
-    const {title, des} = req.body();
+    const {title, des} = req.params.body;
     if(!title){
         console.log("Title was not provoided");
+        res.send("The title was not provided");
+        
     }
     else{
         res.send("Hey homie");
+        console.log(req.params.number);
     }
 })
 
