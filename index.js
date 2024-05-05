@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+
+
 app.use(express.json());
 
 // app.get("/" , (req ,res)=>{
@@ -12,6 +14,30 @@ app.post("/" , (req , res)=>{
 
     console.log("connection type " , req.headers);
 });
+
+let users = [{
+    name : "Vansh",
+    age : 21,
+    dep : "Comp"
+} ,
+{
+    name :"Virat",
+    age : 25,
+    dep : "Entc"
+}];
+function decorate(){
+
+    return users;
+}
+
+app.get('/getUsers' , (req , res)=>{
+
+    const users = decorate();
+
+    res.json({
+        users
+    });
+})
 
 app.get("/getData" , (req , res)=>{
     res.json({
