@@ -11,9 +11,17 @@ app.post("/" , (req , res)=>{
     const lenghtOfKidneys = kidneys.length;
 
     console.log("connection type " , req.headers);
-
-    res.send("you have" + lenghtOfKidneys + "kidneys" + req.headers.username );
 });
+
+app.get("/getData" , (req , res)=>{
+    res.json({
+        name : "Vansh",
+        age : 21
+    });
+});
+
+
+
 
 app.post("/addNewKidney", (req , req)=>{
 
