@@ -26,6 +26,12 @@ app.get('/uwu' , (req ,res)=>{
 });
 
 
+let user = {
+    name : "Vanhs",
+    age : 21,
+    dep : "Computer"
+};
+
 
 
 app.post("/addNewKidney", (req , req)=>{
