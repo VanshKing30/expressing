@@ -1,28 +1,21 @@
 const express = require('express');
 const app = express();
 
-const PORT = 3000;
-
 app.use(express.json());
 
-app.get("/" , function(req , res) {
-    //
-    res.send('<b>I am Vansh</b>');
+// app.get("/" , (req ,res)=>{
+//     res.send("Hello jii");
+// })
+app.post("/" , (req , res)=>{
+    const kidneys  = req.body.kidneys;
+    const lenghtOfKidneys = kidneys.length;
 
-})
+    console.log("connection type " , req.headers);
 
-app.post('/convos' , (req , res)=>{
-
-    console.log(req.headers.connection);
-   
-
-    res.json({
-        name : "vansh",
-        dep : "computer"
-    })
-    
-})
-
-app.listen(PORT , ()=>{
-    console.log(`The app is listninig on ${PORT}`);
+    res.send("you have" + lenghtOfKidneys + "kidneys" + req.headers.username );
 });
+
+
+app.listen(3000 , ()=>{
+    console.log("serveer is active");
+})
