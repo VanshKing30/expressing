@@ -9,7 +9,16 @@ app.get("/" , function(req , res) {
     //
     res.send('<b>I am Vansh</b>');
 
-})
+});
+
+app.get("/getData" , (req , res)=>{
+    res.json({
+        name : "Vansh",
+        age : 21
+    });
+});
+
+
 
 app.post('/convos' , (req , res)=>{
 
