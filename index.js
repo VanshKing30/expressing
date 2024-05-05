@@ -19,6 +19,11 @@ app.get("/getData" , (req , res)=>{
 });
 
 
+app.get('/uwu' , (req ,res)=>{
+    res.send("NEw get req. recieved");
+});
+
+
 
 app.post('/convos' , (req , res)=>{
 
