@@ -15,6 +15,16 @@ app.post("/" , (req , res)=>{
     res.send("you have" + lenghtOfKidneys + "kidneys" + req.headers.username );
 });
 
+app.post("/addNewKidney", (req , req)=>{
+
+    const obj = req.body.user;
+
+    res.json({
+        msg : "The user was recieved"
+    });
+
+});
+
 
 app.listen(3000 , ()=>{
     console.log("serveer is active");
